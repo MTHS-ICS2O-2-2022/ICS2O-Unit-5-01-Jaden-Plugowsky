@@ -22,7 +22,7 @@ body {
 }
 
 .mdl-content {
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .mdl-layout__content {
@@ -36,6 +36,10 @@ body {
 
 .mdl-layout-title {
   color: white;
+}
+
+.page-content-answer {
+  font-size: 20px;
 }
 
 #button-one {

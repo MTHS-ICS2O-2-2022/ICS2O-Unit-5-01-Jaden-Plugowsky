@@ -4,17 +4,33 @@
 // Created on: April 2023
 // This file contains the JS functions for index.html
 
-"use strict";
+"use strict"
 
-function buttonOneClicked() {
-  //This function does XXXX
+const randomNumber = Math.floor(Math.random() * 6) + 1
+
+function guessPressed() {
+  //This function takes a user's guess and checks if it is equal to the previously randomly-generated number
   //Input through Textfields
-  const example = parseFloat(document.getElementById("example").value)
+  const guessedNumber = parseInt(
+    document.getElementById("guessed-number").value
+  )
 
   //Process
-  const answer = example
+  //pass
 
   //Output
-  document.getElementById("answer").innerHTML =
-    "The answer is: " + answer.toFixed(2)
+  if (guessedNumber == randomNumber) {
+    document.getElementById("answer").innerHTML =
+      "Congratulations, you have guessed " +
+      guessedNumber +
+      ", which is the correct number!"
+  }
+  if (guessedNumber == guessedNumber.isNaN()) {
+    document.getElementById("answer").innerHTML =
+      "Try again, that answer is not a number."
+  }
+  if (guessedNumber != randomNumber) {
+    document.getElementById("answer").innerHTML =
+      "Try again, " + guessedNumber + " is not the correct number."
+  }
 }

@@ -21,16 +21,10 @@ function guessPressed() {
   //Output
   if (guessedNumber == randomNumber) {
     document.getElementById("answer").innerHTML =
-      "Congratulations, you have guessed " +
-      guessedNumber +
-      ", which is the correct number!"
-  }
-  if (guessedNumber == guessedNumber.isNaN()) {
-    document.getElementById("answer").innerHTML =
-      "Try again, that answer is not a number."
+      "Congratulations, you have guessed the correct number!"
   }
   if (guessedNumber != randomNumber) {
     document.getElementById("answer").innerHTML =
-      "Try again, " + guessedNumber + " is not the correct number."
+      "Try again, the number you have guessed is incorrect."
   }
 }

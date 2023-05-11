@@ -11,39 +11,28 @@ import (
 	"time"
 )
 
+var source = rand.NewSource(time.Now().UnixNano())
+var random = rand.New(source)
+var randomNumber = random.Intn(5)
+
 func main() {
 	// This function finds a random number, then it asks the user to guess it
-		rand.Seed(time.Now().UnixNano())
-    min := 1
-    max := 6
-	var randomNumber int
 	var userGuess int
 
 	// Input
-	randomNumber = (rand.Intn(max - min) + min)
 	fmt.Println("\nThis program finds a random number, then asking the user to guess the random number.")
 	fmt.Println()
-	fmt.Print("Enter your guess from 1-6: ")
+	fmt.Print("Enter your guess from 0-5: ")
 	fmt.Scanln(&userGuess)
 
 	// Process
 	if userGuess == randomNumber {
-		fmt.Println("You have guessed the correct number, which was", randomNumber, "!")
+		fmt.Println("\nYou have guessed the correct number, which was", randomNumber)
 	}
 	if userGuess != randomNumber {
-		fmt.Println("You have guessed the number incorrectly, which was", randomNumber, ".")
+		fmt.Println("\nYou have guessed the number incorrectly, which was", randomNumber)
 	}
 
 	// Output
 	fmt.Println("\nDone.")
 }
-
-/*
-	// Process
-	volume = 4.0 / 3.0 * math.Pi * math.Pow(radius, 3)
-
-	// Output
-	fmt.Printf("\nThe volume of the Sphere is: %.2f cm³.", volume)
-
-	fmt.Println("\n\nDone.")
-*/
